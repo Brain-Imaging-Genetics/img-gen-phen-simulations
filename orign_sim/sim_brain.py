@@ -20,18 +20,21 @@ def generate_image(fwhm=2):
 
     Returns
     -------
-    simg : Nifti image
-        A nifti image with smooth uniform noise
+    simg : nibabel.nifti1.Nifti1Image
+        A Nifti image with smooth uniform noise
     """
     # Load generic neurovault image
     neurovault_entry = neurovault.fetch_neurovault_auditory_computation_task()
     img_path = neurovault_entry.images
     img = nib.load(img_path.pop())
 
-    # Add uniform, gaussian noise to the image
+    # Generate uniform, gaussian noise
     rv = uniform.rvs(size=np.array(img.shape))
     sigma = fwhm / np.sqrt(8 * np.log(2))
-    srv= filters.gaussian_filter(rv, sigma=sigma)
+    srv = filters.gaussian_filter(rv, sigma=sigma)
+
+    # Add generated noise to the neurovault image
     new_data = img.get_fdata() + srv
     simg = nilearn.image.new_img_like(img, new_data)
+
     return simg

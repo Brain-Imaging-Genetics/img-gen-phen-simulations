@@ -19,7 +19,7 @@ More detailed steps:
 
 * generate N simulated genomes, one per subject. There are different ways of doing this but you can start with very simple assumption about linkage disequilibrium. Look at the tools or packages already available for this. This can build on Yue’s simulations.
 * generate basic demographic data for these simulated participants
-* generate a functional (fMRI) brain image per participant: start with an existing brain image (eg, find one on Openneuro or Neurovault) and create new subjects by adding gaussian smoothed noise. In a future step, signals specific to demographic data could be added.
+* ~~generate a functional (fMRI) brain image per participant: start with an existing brain image (eg, find one on Openneuro or Neurovault) and create new subjects by adding gaussian smoothed noise.~~ In a future step, signals specific to demographic data could be added.
 * add signal (a list of x,y,z coordinate) as a function of a list of alleles. Start with a simple linear function, but organize the code such that non linear functions could be developed easily in the future
 * create P phenotypes (for example P=10-20) from brain regions signals. To start, a simple linear generative model, where clinical or behavioural phenotypes are constructed as a linear function of the values in the brain images could be used with random weights.
 
