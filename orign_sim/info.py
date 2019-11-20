@@ -9,7 +9,7 @@ __author__ = 'ORIGN Sim developers'
 __copyright__ = 'Copyright 2019, ORIGN Sim developers'
 __credits__ = ['Jean-Baptiste Poline']
 __license__ = '3-clause BSD'
-__version__ = '0.0.1'
+__version__ = '0.0.0'
 __maintainer__ = 'Jean-Baptiste Poline'
 __email__ = 'jbpoline@gmail.com'
 __status__ = 'Prototype'
@@ -28,7 +28,7 @@ REQUIRES = [
     'scikit-learn',
     'nilearn',
     'nibabel>=2.1.0',
-    'nipy',
+    'nipy @ git+https://github.com/alexprz/nipy.git@ef3d245c28ceb015d7465fb29d63d0cee0fa6038',
     'scipy',
     'pandas',
     'matplotlib'
